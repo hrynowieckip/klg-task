@@ -34,7 +34,7 @@ public class ReservationController {
         return ResponseEntity.ok().body(id);
     }
 
-    @GetMapping("/tentant/{name}")
+    @GetMapping("/tenant/{name}")
     public ResponseEntity<?> getReservationsForTenantName(@PathVariable String name) {
         Set<Reservation> reservations = reservationService.getReservationsForTenantName(name);
         return ResponseEntity.ok().body(reservations);

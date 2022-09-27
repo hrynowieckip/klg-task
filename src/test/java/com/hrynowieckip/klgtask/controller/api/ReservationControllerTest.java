@@ -102,7 +102,7 @@ class ReservationControllerTest {
     @Test
     void getReservationsForTenantName() throws Exception {
         when(reservationService.getReservationsForTenantName(name)).thenReturn(Set.of(reservation));
-        mvc.perform(get("/api/v1/reservation/tentant/{name}", name)
+        mvc.perform(get("/api/v1/reservation/tenant/{name}", name)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andDo(print())
